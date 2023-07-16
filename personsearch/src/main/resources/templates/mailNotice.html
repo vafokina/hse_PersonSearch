@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Отчет готов!</title>
+
+    <style>
+        .text {
+            text-align: center;
+            font-size: 1rem;
+            font-family: monospace;
+        }
+
+        .link {
+            font-style: italic;
+        }
+
+        .image {
+            max-width:400px;
+            max-height:300px;
+        }
+    </style>
+</head>
+<body class="text">
+    <p>
+        Результаты по вашему запросу готовы
+    </p>
+    <p>
+        <a class="link" th:href="${url}" th:text="${url}"></a>
+    </p>
+    <p>
+        <img class="image" th:src="${imageUrl}"/>
+    </p>
+</body>
+</html>

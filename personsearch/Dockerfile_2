@@ -1,0 +1,15 @@
+FROM openjdk:17-alpine
+#WORKDIR /app
+
+# внешний порт, по которому наше приложение будет доступно извне
+EXPOSE 8080
+
+# указываем, где в нашем приложении лежит джарник
+ARG JAR_FILE=target/personsearch-0.0.1-SNAPSHOT.jar
+
+# добавляем джарник в образ под именем rebounder-chain-backend.jar
+#ADD ${JAR_FILE} personsearch-back.jar
+COPY ${JAR_FILE} personsearch-back.jar
+
+# команда запуска джарника
+ENTRYPOINT ["java","-jar","/personsearch-back.jar"]
